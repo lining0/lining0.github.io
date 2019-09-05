@@ -637,17 +637,19 @@ pre {
   color: #666666;
 }
 .post-content ul {
-  margin: 0 0 24px 6px;
+  /* margin: 0 0 24px 6px; */
+  margin: 0 0 0px 6px;
   padding-left: 16px;
   list-style-type: square;
 }
 .post-content ol {
-  margin: 0 0 24px 6px;
+  /* margin: 0 0 24px 6px; */
+  margin: 0 0 0px 6px;
   padding-left: 16px;
   list-style-type: decimal;
 }
 .post-content li {
-  margin-bottom: 0.2em;
+  /* margin-bottom: 0.2em; */
 }
 .post-content li ul {
   margin-top: 0;
@@ -1084,7 +1086,7 @@ pre {
 }
 #article-toc .toc .toc-item .toc-link {
   display: block;
-  color: #333;
+  color: rgb(10, 129, 226);
   text-decoration: none;
   padding: 4px 0;
   line-height: 1.25em;
