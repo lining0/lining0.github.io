@@ -232,7 +232,9 @@
 </ul>
 <h2 id="3-Object扩展"><a href="#3-Object扩展" class="headerlink" title="3.Object扩展"></a>3.Object扩展</h2><p>ES5给Object扩展了一些静态方法, 常用的2个:</p>
 <ol>
-<li>Object.create(prototype, [descriptors])<ul>
+<li>Object.create(prototype, [descriptors])</li>
+</ol>
+<ul>
 <li>作用: 以指定对象为原型创建新的对象</li>
 <li>为新的对象指定新的属性, 并对属性进行描述<ul>
 <li>value : 指定值</li>
@@ -242,12 +244,12 @@
 </ul>
 </li>
 </ul>
-</li>
-</ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;username:&apos;li&apos;,age:18&#125;;</span><br><span class="line">var obj1 = &#123;&#125;;</span><br><span class="line">obj1 = Object.create(obj,&#123;</span><br><span class="line">  sex:&#123;</span><br><span class="line">    value:&apos;男&apos;,</span><br><span class="line">    writable:true,</span><br><span class="line">    configurable:true,</span><br><span class="line">    enumerable：true</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>Object.defineProperties(object, descriptors)<ul>
+<li>Object.defineProperties(object, descriptors)</li>
+</ol>
+<ul>
 <li>作用: 为指定对象定义扩展多个属性<ul>
 <li>get ：用来获取当前属性值得回调函数</li>
 <li>set ：修改当前属性值得触发的回调函数，并且实参即为修改后的值</li>
@@ -255,17 +257,15 @@
 </li>
 <li>存取器属性：setter,getter一个用来存值，一个用来取值</li>
 </ul>
-</li>
-</ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var obj2 =&#123;firstName:&apos;ning&apos;,lastName:&apos;li&apos;&#125;</span><br><span class="line">Object.defineProperties(obj2,&#123;</span><br><span class="line">  fullName:&#123;</span><br><span class="line">    get:function()&#123;</span><br><span class="line">      // 获取扩展属性的值，获取扩展属性值得get方法调用</span><br><span class="line">      return this.lastName+&apos; &apos;+this.firstName;</span><br><span class="line">    &#125;,</span><br><span class="line">    set:function(data)&#123;</span><br><span class="line">      //监听扩展属性，当扩展属性发生时会自动调用,自动调用后会将变化的值作为实参注入到set函数</span><br><span class="line">      console.log(&apos;data&apos;,data);</span><br><span class="line">      var names = data.split(&apos; &apos;);</span><br><span class="line">      this.firstName = names[0]</span><br><span class="line">      this.lastName = names[1]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(&apos;obj2.fullName&apos;,obj2.fullName);</span><br><span class="line">obj2.fullName = &apos;li lili&apos;;</span><br><span class="line">console.log(&apos;obj2.fullName&apos;,obj2.fullName);</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
-<li>对象本身的两个方法<ul>
+<li>对象本身的两个方法</li>
+</ol>
+<ul>
 <li>get propertyName(){} 用来得到当前属性值的回调函数</li>
 <li>set propertyName(){} 用来监视当前属性值变化的回调函数</li>
 </ul>
-</li>
-</ol>
 <h2 id="4-Array扩展"><a href="#4-Array扩展" class="headerlink" title="4.Array扩展"></a>4.Array扩展</h2><ol>
 <li>Array.prototype.indexOf(value) : 得到值在数组中的第一个下标</li>
 <li>Array.prototype.lastIndexOf(value) : 得到值在数组中的最后一个下标</li>
@@ -273,18 +273,138 @@
 <li>Array.prototype.map(function(item, index){}) : 遍历数组返回一个新的数组，返回加工之后的值</li>
 <li>Array.prototype.filter(function(item, index){}) : 遍历过滤出一个新的子数组， 返回条件为true的值</li>
 </ol>
-<h2 id="5-Function扩展"><a href="#5-Function扩展" class="headerlink" title="5.Function扩展"></a>5.Function扩展</h2><ol>
-<li>Function.prototype.bind(obj) :<ul>
+<h2 id="5-Function扩展-call-apply-bind"><a href="#5-Function扩展-call-apply-bind" class="headerlink" title="5.Function扩展(call,apply,bind)"></a>5.Function扩展(call,apply,bind)</h2><ol>
+<li>Function.prototype.bind(obj) :</li>
+</ol>
+<ul>
 <li>作用: 将函数内的this绑定为obj, 并将函数返回</li>
 </ul>
-</li>
-<li>面试题: 区别bind()与call()和apply()?<ul>
+<ol start="2">
+<li>面试题: 区别bind()与call()和apply()?</li>
+</ol>
+<ul>
 <li>都能指定函数中的this</li>
 <li>call()/apply()是立即调用函数</li>
-<li>bind()是将函数返回</li>
+<li>bind()是将函数返回<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;userName:&apos;li&apos;&#125;;</span><br><span class="line">function foo(data) &#123;</span><br><span class="line">  console.log(this,data);</span><br><span class="line">&#125;</span><br><span class="line">// 传入参数形式不同</span><br><span class="line">foo.call(obj,33)//直接从第二个参数开，依次传入</span><br><span class="line">foo.apply(obj,[33])//第二个参数必须是数组，传入的数据放在数组里</span><br><span class="line">foo.bind(obj,33)()//bind的特点，绑定完this不会立即调用当前的函数，而是将函数返回,传参同call相同</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="6-let-const关键字"><a href="#6-let-const关键字" class="headerlink" title="6.let_const关键字"></a>6.let_const关键字</h2><p>let</p>
+<ol>
+<li>作用:</li>
+</ol>
+<ul>
+<li>与var类似, 用于声明一个变量</li>
+</ul>
+<ol start="2">
+<li>特点:</li>
+</ol>
+<ul>
+<li>在块作用域内有效</li>
+<li>不能重复声明</li>
+<li>不会预处理, 不存在变量提升（预解析）</li>
+</ul>
+<ol start="3">
+<li>应用:</li>
+</ol>
+<ul>
+<li>循环遍历加监听</li>
+<li>使用let取代var是趋势</li>
+</ul>
+<p>const</p>
+<ol>
+<li>作用:</li>
+</ol>
+<ul>
+<li>定义一个常量</li>
+</ul>
+<ol start="2">
+<li>特点:</li>
+</ol>
+<ul>
+<li>不能修改</li>
+<li>其它特点同let</li>
+</ul>
+<ol start="3">
+<li>应用:</li>
+</ol>
+<ul>
+<li>保存不用改变的数据</li>
+</ul>
+<h2 id="7-变量的解构赋值"><a href="#7-变量的解构赋值" class="headerlink" title="7.变量的解构赋值"></a>7.变量的解构赋值</h2><ol>
+<li>理解:</li>
+</ol>
+<ul>
+<li>从对象或数组中提取数据, 并赋值给变量(多个)</li>
+</ul>
+<ol start="2">
+<li>对象的解构赋值<br>let {n, a} = {n:’tom’, a:12}</li>
+<li>数组的解构赋值<br>let [a,b] = [1, ‘atguigu’];</li>
+<li>用途</li>
+</ol>
+<ul>
+<li>给多个形参赋值</li>
+</ul>
+<h2 id="8-模板字符串"><a href="#8-模板字符串" class="headerlink" title="8.模板字符串"></a>8.模板字符串</h2><ol>
+<li>模板字符串 : 简化字符串的拼接</li>
+</ol>
+<ul>
+<li>模板字符串必须用 `` 包含</li>
+<li>变化的部分使用${xxx}定义</li>
+</ul>
+<h2 id="9-对象的简写方式"><a href="#9-对象的简写方式" class="headerlink" title="9.对象的简写方式"></a>9.对象的简写方式</h2><ol>
+<li>简化的对象写法</li>
+</ol>
+<ul>
+<li>省略同名的属性值</li>
+<li>省略方法的function</li>
+<li>例如:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let x = 1;</span><br><span class="line">let y = 2;</span><br><span class="line">let point = &#123;</span><br><span class="line">  x,//同名的属性可以省略不写</span><br><span class="line">  y,</span><br><span class="line">  setX (x) &#123;this.x = x&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="10-箭头函数"><a href="#10-箭头函数" class="headerlink" title="10.箭头函数"></a>10.箭头函数</h2><ul>
+<li><p>作用: 定义匿名函数</p>
+</li>
+<li><p>基本语法:</p>
+<ul>
+<li>没有参数: () =&gt; console.log(‘xxxx’)</li>
+<li>一个参数: i =&gt; i+2</li>
+<li>大于一个参数: (i,j) =&gt; i+j</li>
+<li>函数体不用大括号: 默认返回结果</li>
+<li>函数体如果有多个语句, 需要用{}包围，若有需要返回的内容，需要手动返回</li>
 </ul>
 </li>
+<li><p>使用场景: 多用来定义回调函数</p>
+</li>
+<li><p>箭头函数的特点：</p>
+</li>
+</ul>
+<ol>
+<li>简洁</li>
+<li>箭头函数没有自己的this，箭头函数的this不是调用的时候决定的，而是在定义的时候处在的对象就是它的this</li>
+<li>扩展理解： 箭头函数的this看外层的是否有函数，<br>如果有，外层函数的this就是内部箭头函数的this，<br>如果没有，则this是window。</li>
 </ol>
+<h2 id="11-三点运算符"><a href="#11-三点运算符" class="headerlink" title="11.三点运算符"></a>11.三点运算符</h2><ul>
+<li>用途</li>
+</ul>
+<ol>
+<li>rest(可变)参数</li>
+</ol>
+<ul>
+<li>用来取代arguments 但比 arguments 灵活,只能是最后部分形参参数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function fun(...values) &#123;</span><br><span class="line">  console.log(arguments);</span><br><span class="line">  arguments.forEach(function (item, index) &#123;</span><br><span class="line">      console.log(item, index);</span><br><span class="line">  &#125;);</span><br><span class="line">  console.log(values);</span><br><span class="line">  values.forEach(function (item, index) &#123;</span><br><span class="line">      console.log(item, index);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">fun(1,2,3);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li>扩展运算符<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let arr1 = [1,3,5];</span><br><span class="line">let arr2 = [2,...arr1,6];</span><br><span class="line">arr2.push(...arr1);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="12-形参默认值"><a href="#12-形参默认值" class="headerlink" title="12.形参默认值"></a>12.形参默认值</h2><ul>
+<li>形参的默认值—-当不传入参数的时候默认使用形参里的默认值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function Point(x = 1,y = 2) &#123;</span><br><span class="line">this.x = x;</span><br><span class="line">this.y = y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="13-Promise对象"><a href="#13-Promise对象" class="headerlink" title="13.Promise对象"></a>13.Promise对象</h2><p><img src="/2019/09/05/ES5-6-7/promise%E8%BF%87%E7%A8%8B%E5%88%86%E6%9E%90.png" alt></p>
 
     </div>
     
@@ -348,7 +468,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-严格模式"><span class="toc-text">1.严格模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-JSON对象"><span class="toc-text">2.JSON对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Object扩展"><span class="toc-text">3.Object扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Array扩展"><span class="toc-text">4.Array扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Function扩展"><span class="toc-text">5.Function扩展</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-严格模式"><span class="toc-text">1.严格模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-JSON对象"><span class="toc-text">2.JSON对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Object扩展"><span class="toc-text">3.Object扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Array扩展"><span class="toc-text">4.Array扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Function扩展-call-apply-bind"><span class="toc-text">5.Function扩展(call,apply,bind)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-let-const关键字"><span class="toc-text">6.let_const关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-变量的解构赋值"><span class="toc-text">7.变量的解构赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-模板字符串"><span class="toc-text">8.模板字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-对象的简写方式"><span class="toc-text">9.对象的简写方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-箭头函数"><span class="toc-text">10.箭头函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-三点运算符"><span class="toc-text">11.三点运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-形参默认值"><span class="toc-text">12.形参默认值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-Promise对象"><span class="toc-text">13.Promise对象</span></a></li></ol>
         
     </div>
 </aside>
