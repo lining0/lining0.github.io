@@ -21,7 +21,15 @@
     <meta name="keywords" content="JavaScript">
 
 
-    <meta name="description" content>
+    <meta name="description" content="严格模式
+理解:
+
+
+除了正常运行模式(混杂模式)，ES5添加了第二种运行模式：”严格模式”（strict mode）。
+顾名思义，这种模式使得Javascript在更严格的语法条件下运行
+
+
+...">
 
 
 
@@ -180,7 +188,50 @@
     </div>
     
     <div class="post-body post-content">
-        
+        <h3 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h3><ol>
+<li>理解:</li>
+</ol>
+<ul>
+<li>除了正常运行模式(混杂模式)，ES5添加了第二种运行模式：”严格模式”（strict mode）。</li>
+<li>顾名思义，这种模式使得Javascript在更严格的语法条件下运行</li>
+</ul>
+<ol start="2">
+<li>目的/作用</li>
+</ol>
+<ul>
+<li>消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为</li>
+<li>消除代码运行的一些不安全之处，为代码的安全运行保驾护航</li>
+<li>为未来新版本的Javascript做好铺垫</li>
+</ul>
+<ol start="3">
+<li>使用</li>
+</ol>
+<ul>
+<li>在全局或函数的第一条语句定义为: ‘use strict’;</li>
+<li>如果浏览器不支持, 只解析为一条简单的语句, 没有任何副作用</li>
+</ul>
+<ol start="4">
+<li>语法和行为改变</li>
+</ol>
+<ul>
+<li>必须用var声明变量</li>
+<li>禁止自定义的函数中的this指向window</li>
+<li>创建eval作用域</li>
+<li>对象不能有重名的属性</li>
+</ul>
+<h3 id="JSON对象"><a href="#JSON对象" class="headerlink" title="JSON对象"></a>JSON对象</h3><ol>
+<li>JSON.stringify(obj/arr)</li>
+</ol>
+<ul>
+<li>js对象(数组)转换为json对象(数组)</li>
+</ul>
+<ol start="2">
+<li>JSON.parse(json)</li>
+</ol>
+<ul>
+<li>json对象(数组)转换为js对象(数组)</li>
+</ul>
+
     </div>
     
     <div class="post-footer">
@@ -243,7 +294,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <p>暂无目录</p>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#严格模式"><span class="toc-text">严格模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON对象"><span class="toc-text">JSON对象</span></a></li></ol>
         
     </div>
 </aside>
