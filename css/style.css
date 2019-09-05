@@ -530,13 +530,13 @@ pre {
 }
 .post-content h2 {
   font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "SimSun", sans-serif;
-  color: #333;
+  color: #e67e22;
   font-size: 1.5em;
   margin: 0.83em 0;
 }
 .post-content h3 {
   font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "SimSun", sans-serif;
-  color: #333;
+  color: #e67e22;
   font-size: 1.17em;
   margin: 1em 0;
 }
@@ -672,7 +672,7 @@ pre {
   padding: 0;
 }
 .post-content code {
-  color: #808080;
+  color: #ccc;
   font-size: 0.96em;
   background-color: #f9f9f9;
   padding: 1px 2px;
@@ -684,7 +684,7 @@ pre {
   word-wrap: break-word;
 }
 .post-content tt {
-  color: #808080;
+  color: #ccc;
   font-size: 0.96em;
   background-color: #f9f9f9;
   padding: 1px 2px;
@@ -703,17 +703,17 @@ pre {
   overflow: auto;
   line-height: 1.5;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-  color: #808080;
+  color: #ccc;
   background-color: #f9f9f9;
 }
 .post-content pre code {
-  color: #808080;
+  color: #ccc;
   border: none;
   background: none;
   padding: 0;
 }
 .post-content pre tt {
-  color: #808080;
+  color: #ccc;
   border: none;
   background: none;
   padding: 0;
