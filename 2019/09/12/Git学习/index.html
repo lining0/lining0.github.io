@@ -18,11 +18,14 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content>
+    <meta name="keywords" content="Git">
 
 
-    <meta name="description" content="啊飒飒
-">
+    <meta name="description" content="第一章: Git基础1.初次运行 Git 前的配置git官方文档
+
+
+git config –global user.name “John Doe”
+git config –global use...">
 
 
 
@@ -34,7 +37,7 @@
     <!--Title-->
 
 
-<title>HTML5 | lnnn</title>
+<title>Git学习 | lnnn</title>
 
 
     <link rel="alternate" href="/atom.xml" title="lnnn" type="application/atom+xml">
@@ -143,9 +146,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="HTML5">
+        <h1 id="Git学习">
             
-	            HTML5
+	            Git学习
             
         </h1>
         <div class="post-meta">
@@ -161,6 +164,8 @@
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
                 
+                    <a class="tag-link" href="/tags/Git/">Git</a>
+                
             </span>
         </span>
     
@@ -169,7 +174,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/08/14</span>
+            <span class="date-meta">2019/09/12</span>
         </span>
         
     
@@ -179,7 +184,45 @@
     </div>
     
     <div class="post-body post-content">
-        <p>啊飒飒</p>
+        <h1 id="第一章-Git基础"><a href="#第一章-Git基础" class="headerlink" title="第一章: Git基础"></a>第一章: Git基础</h1><h3 id="1-初次运行-Git-前的配置"><a href="#1-初次运行-Git-前的配置" class="headerlink" title="1.初次运行 Git 前的配置"></a>1.初次运行 Git 前的配置</h3><p><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">git官方文档</a></p>
+<blockquote>
+<ol>
+<li>git config –global user.name “John Doe”</li>
+<li>git config –global user.email <a href="mailto:johndoe@example.com" target="_blank" rel="noopener">johndoe@example.com</a></li>
+</ol>
+</blockquote>
+<ul>
+<li><p>缺省等同于local</p>
+<blockquote>
+<ol>
+<li>git config –local   //local只对某个仓库有效</li>
+<li>git config –global   //global对当前用户所有仓库有效</li>
+<li>git config –system   //system对系统所有登录的用户有效</li>
+</ol>
+</blockquote>
+</li>
+<li><p>显示config的配置，加–list</p>
+<blockquote>
+<ol>
+<li>git config –list –local</li>
+<li>git config –list –global</li>
+<li>git config –list –system</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-给文件重命名的方法"><a href="#2-给文件重命名的方法" class="headerlink" title="2.给文件重命名的方法"></a>2.给文件重命名的方法</h3><blockquote>
+<ol>
+<li>git reset –hard //取消暂存区</li>
+<li>git mv project new_project //给文件重命名</li>
+</ol>
+</blockquote>
+<h3 id="3-通过gitlog查看版本演变历史"><a href="#3-通过gitlog查看版本演变历史" class="headerlink" title="3.通过gitlog查看版本演变历史"></a>3.通过gitlog查看版本演变历史</h3><blockquote>
+<ol>
+<li>git log –oneline</li>
+<li>git log -n2   //查看最近两次</li>
+</ol>
+</blockquote>
 
     </div>
     
@@ -197,15 +240,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/08/14/工具/" class="pre-post btn btn-default" title='工具'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">工具</span>
-        </a>
     
-    
-        <a href="/2019/08/14/my-first-blog/" class="next-post btn btn-default" title='my-first-blog'>
+        <a href="/2019/09/10/JS模块化/" class="next-post btn btn-default" title='JS模块化'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">my-first-blog</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">JS模块化</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -248,7 +286,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <p>暂无目录</p>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一章-Git基础"><span class="toc-text">第一章: Git基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-初次运行-Git-前的配置"><span class="toc-text">1.初次运行 Git 前的配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-给文件重命名的方法"><span class="toc-text">2.给文件重命名的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-通过gitlog查看版本演变历史"><span class="toc-text">3.通过gitlog查看版本演变历史</span></a></li></ol></li></ol></li></ol>
         
     </div>
 </aside>
