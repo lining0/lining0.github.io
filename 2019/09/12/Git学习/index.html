@@ -21,11 +21,11 @@
     <meta name="keywords" content="Git">
 
 
-    <meta name="description" content="第一章: Git基础1.初次运行 Git 前的配置git官方文档
+    <meta name="description" content="一、Git基础1.初次运行 Git 前的配置git官方文档
 
 
 git config –global user.name “John Doe”
-git config –global use...">
+git config –global user.e...">
 
 
 
@@ -184,7 +184,7 @@ git config –global use...">
     </div>
     
     <div class="post-body post-content">
-        <h1 id="第一章-Git基础"><a href="#第一章-Git基础" class="headerlink" title="第一章: Git基础"></a>第一章: Git基础</h1><h3 id="1-初次运行-Git-前的配置"><a href="#1-初次运行-Git-前的配置" class="headerlink" title="1.初次运行 Git 前的配置"></a>1.初次运行 Git 前的配置</h3><p><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">git官方文档</a></p>
+        <h1 id="一、Git基础"><a href="#一、Git基础" class="headerlink" title="一、Git基础"></a>一、Git基础</h1><h3 id="1-初次运行-Git-前的配置"><a href="#1-初次运行-Git-前的配置" class="headerlink" title="1.初次运行 Git 前的配置"></a>1.初次运行 Git 前的配置</h3><p><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">git官方文档</a></p>
 <blockquote>
 <ol>
 <li>git config –global user.name “John Doe”</li>
@@ -219,8 +219,83 @@ git config –global use...">
 </blockquote>
 <h3 id="3-通过gitlog查看版本演变历史"><a href="#3-通过gitlog查看版本演变历史" class="headerlink" title="3.通过gitlog查看版本演变历史"></a>3.通过gitlog查看版本演变历史</h3><blockquote>
 <ol>
-<li>git log –oneline</li>
-<li>git log -n2   //查看最近两次</li>
+<li>git log –oneline  //产看日志的简洁方式</li>
+<li>git log –oneline –all  //产看日志的简洁方式的所有分支</li>
+<li>git log -n2   //查看当前分支最近的两次log</li>
+<li>git log –all  //查看所有分支的log</li>
+<li>git log –graph  //看整个版本的演进历史</li>
+</ol>
+</blockquote>
+<h3 id="4-了解"><a href="#4-了解" class="headerlink" title="4.了解"></a>4.了解</h3><blockquote>
+<ol>
+<li>gitk ：通过图形界面工具查看版本历史 –all</li>
+<li>.git目录</li>
+<li>git checkout 分支名   //切换分支</li>
+<li>commit tree blob</li>
+</ol>
+</blockquote>
+<h3 id="5-分离头指针"><a href="#5-分离头指针" class="headerlink" title="5.分离头指针"></a>5.分离头指针</h3><blockquote>
+<ol>
+<li>git checkout commitId</li>
+<li>git branch -av  //查看分支</li>
+</ol>
+</blockquote>
+<h1 id="二、使用Git的常见场景"><a href="#二、使用Git的常见场景" class="headerlink" title="二、使用Git的常见场景"></a>二、使用Git的常见场景</h1><h3 id="1-删除不需要的分支"><a href="#1-删除不需要的分支" class="headerlink" title="1.删除不需要的分支"></a>1.删除不需要的分支</h3><blockquote>
+<ol>
+<li>git branch -d</li>
+<li>git commit –amend  //对最近提交的一次commit做变更</li>
+</ol>
+</blockquote>
+<h3 id="2-把本地仓库同步到GitHub"><a href="#2-把本地仓库同步到GitHub" class="headerlink" title="2.把本地仓库同步到GitHub"></a>2.把本地仓库同步到GitHub</h3><blockquote>
+<ol>
+<li>git remote -v</li>
+<li>git remote  add github <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:lining0/git_learning.git</li>
+<li>git push github –all     //本地仓库push到远端(报错)</li>
+<li>git fetch github master     //把远端的拉下来</li>
+<li>git merge github/master     //和远端的master做合并(报错)</li>
+<li>git merge –allow-unrelated-histories  github/master</li>
+<li>git push github master    //本地仓库push到远端</li>
+</ol>
+</blockquote>
+<h1 id="三、Git多人单分支集成协作时的常见场景"><a href="#三、Git多人单分支集成协作时的常见场景" class="headerlink" title="三、Git多人单分支集成协作时的常见场景"></a>三、Git多人单分支集成协作时的常见场景</h1><h3 id="1-不同人修改了不同文件如何处理？"><a href="#1-不同人修改了不同文件如何处理？" class="headerlink" title="1.不同人修改了不同文件如何处理？"></a>1.不同人修改了不同文件如何处理？</h3><blockquote>
+<ol>
+<li>git checkout -b feature/add_git_comments origin/feature/add_git_comments   //基于远端的分支创建本地的分支，并切换分支</li>
+<li>git add -u   //添加到暂存区</li>
+<li>git status   //查看状态</li>
+<li>git commit -m’add_git_commands’   //记录</li>
+<li>git push    //本地仓库push到远端</li>
+<li>git pull    //拉取（包括两个步骤git fetch &amp;&amp; git merge ）</li>
+<li>git fetch github    //把远端的拉下来</li>
+<li>git merge origin/feature/add_git_comments    //把远端的合并到本地</li>
+</ol>
+</blockquote>
+<h3 id="2-不同人修改了同文件的不同区域如何处理？"><a href="#2-不同人修改了同文件的不同区域如何处理？" class="headerlink" title="2.不同人修改了同文件的不同区域如何处理？"></a>2.不同人修改了同文件的不同区域如何处理？</h3><blockquote>
+<ol>
+<li>git pull     //远端拉取</li>
+<li>git merge </li>
+</ol>
+</blockquote>
+<h3 id="3-不同人修改了同文件的同一区域如何处理？"><a href="#3-不同人修改了同文件的同一区域如何处理？" class="headerlink" title="3.不同人修改了同文件的同一区域如何处理？"></a>3.不同人修改了同文件的同一区域如何处理？</h3><blockquote>
+<ol>
+<li>git merge origin/feature/add_git_comments    //把远端的合并到本地</li>
+<li>git pull</li>
+<li>git commit -am’Resolved conflict by hand with 4 git commands’</li>
+<li>git push</li>
+</ol>
+</blockquote>
+<h3 id="4-同时变更了文件名和文件内容如何处理？"><a href="#4-同时变更了文件名和文件内容如何处理？" class="headerlink" title="4.同时变更了文件名和文件内容如何处理？"></a>4.同时变更了文件名和文件内容如何处理？</h3><blockquote>
+<ol>
+<li>git pull</li>
+<li>git push</li>
+</ol>
+</blockquote>
+<h3 id="5-把同一文件改成了不同的文件名如何处理？"><a href="#5-把同一文件改成了不同的文件名如何处理？" class="headerlink" title="5.把同一文件改成了不同的文件名如何处理？"></a>5.把同一文件改成了不同的文件名如何处理？</h3><blockquote>
+<ol>
+<li>git rm idnex.html</li>
+<li>git add idnex1.htm</li>
+<li>git rm idnex2.htm</li>
+<li>git commit -am’decide to mv index to index1’</li>
+<li>git push</li>
 </ol>
 </blockquote>
 
@@ -286,7 +361,7 @@ git config –global use...">
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一章-Git基础"><span class="toc-text">第一章: Git基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-初次运行-Git-前的配置"><span class="toc-text">1.初次运行 Git 前的配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-给文件重命名的方法"><span class="toc-text">2.给文件重命名的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-通过gitlog查看版本演变历史"><span class="toc-text">3.通过gitlog查看版本演变历史</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、Git基础"><span class="toc-text">一、Git基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-初次运行-Git-前的配置"><span class="toc-text">1.初次运行 Git 前的配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-给文件重命名的方法"><span class="toc-text">2.给文件重命名的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-通过gitlog查看版本演变历史"><span class="toc-text">3.通过gitlog查看版本演变历史</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-了解"><span class="toc-text">4.了解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-分离头指针"><span class="toc-text">5.分离头指针</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、使用Git的常见场景"><span class="toc-text">二、使用Git的常见场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-删除不需要的分支"><span class="toc-text">1.删除不需要的分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-把本地仓库同步到GitHub"><span class="toc-text">2.把本地仓库同步到GitHub</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、Git多人单分支集成协作时的常见场景"><span class="toc-text">三、Git多人单分支集成协作时的常见场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-不同人修改了不同文件如何处理？"><span class="toc-text">1.不同人修改了不同文件如何处理？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-不同人修改了同文件的不同区域如何处理？"><span class="toc-text">2.不同人修改了同文件的不同区域如何处理？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-不同人修改了同文件的同一区域如何处理？"><span class="toc-text">3.不同人修改了同文件的同一区域如何处理？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-同时变更了文件名和文件内容如何处理？"><span class="toc-text">4.同时变更了文件名和文件内容如何处理？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-把同一文件改成了不同的文件名如何处理？"><span class="toc-text">5.把同一文件改成了不同的文件名如何处理？</span></a></li></ol></li></ol></li></ol>
         
     </div>
 </aside>
