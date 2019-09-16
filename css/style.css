@@ -621,21 +621,21 @@ pre {
 
 .post-content h1 {
   font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "SimSun", sans-serif;
-  color: #333;
+  color: rgb(192, 10, 10);
   font-size: 1.8em;
   margin: 0.67em 0;
 }
 
 .post-content h2 {
   font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "SimSun", sans-serif;
-  color: #e67e22;
+  color: #2a1749;
   font-size: 1.5em;
   margin: 0.83em 0;
 }
 
 .post-content h3 {
   font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "SimSun", sans-serif;
-  color: #e67e22;
+  color: #0a40a5;
   font-size: 1.17em;
   margin: 1em 0;
 }
