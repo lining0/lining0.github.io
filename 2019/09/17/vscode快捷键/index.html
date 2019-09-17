@@ -18,11 +18,13 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content="vue">
+    <meta name="keywords" content="vscode">
 
 
-    <meta name="description" content="第二节。实现登录
-">
+    <meta name="description" content="1.代码折叠
+（折叠最内层的、可以被折叠的代码块）Ctrl + Shift + 左方括号
+（展开最内层的、可以被展开的代码块）Ctrl + Shift + 右方括号
+（所有可以被折叠的代码一次性...">
 
 
 
@@ -34,7 +36,7 @@
     <!--Title-->
 
 
-<title>实现登录 | lnnn</title>
+<title>vscode快捷键 | lnnn</title>
 
 
     <link rel="alternate" href="/atom.xml" title="lnnn" type="application/atom+xml">
@@ -143,16 +145,16 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="实现登录">
+        <h1 id="vscode快捷键">
             
-	            实现登录
+	            vscode快捷键
             
         </h1>
         <div class="post-meta">
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/前端/">前端</a> <a class="category-link" href="/categories/前端/Vue后台管理系统/">Vue后台管理系统</a>
+            <a class="category-link" href="/categories/工具/">工具</a>
         </span>
     
 
@@ -161,7 +163,7 @@
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
                 
-                    <a class="tag-link" href="/tags/vue/">vue</a>
+                    <a class="tag-link" href="/tags/vscode/">vscode</a>
                 
             </span>
         </span>
@@ -171,7 +173,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/08/14</span>
+            <span class="date-meta">2019/09/17</span>
         </span>
         
     
@@ -181,7 +183,68 @@
     </div>
     
     <div class="post-body post-content">
-        <p>第二节。实现登录</p>
+        <h2 id="1-代码折叠"><a href="#1-代码折叠" class="headerlink" title="1.代码折叠"></a>1.代码折叠</h2><ol>
+<li>（折叠最内层的、可以被折叠的代码块）Ctrl + Shift + 左方括号</li>
+<li>（展开最内层的、可以被展开的代码块）Ctrl + Shift + 右方括号</li>
+<li>（所有可以被折叠的代码一次性全部折叠起来）Ctrl + K，Ctrl + 0</li>
+<li>（所有可以被展开的代码一次性全部展开起来）Ctrl + K，Ctrl + J</li>
+<li>（基于语言定义的代码折叠）// region Main  // endregion</li>
+</ol>
+<h2 id="2-单文件搜索和替换"><a href="#2-单文件搜索和替换" class="headerlink" title="2.单文件搜索和替换"></a>2.单文件搜索和替换</h2><ol>
+<li>（快速地调出搜索窗口）Ctrl + F</li>
+<li>（在搜索结果之间自上而下跳转）回车键</li>
+<li>（在搜索结果之间自下而上跳转）shift + 回车键</li>
+<li>（调出了搜索框,但光标依然是在编辑器当中，而不是在搜索框中）F3</li>
+<li>（在搜索结果之间自上而下地循环跳转）F3</li>
+<li>（实现自下而上的跳转）Shift + F3</li>
+<li>（搜索框最右侧的三个配置按钮）</li>
+<li>（第一个是大小写敏感Case） Alt + C</li>
+<li>（第二个是全单词匹配Word） Alt + W</li>
+<li>（第三个是正则表达式匹配Regular Expression） Alt + R</li>
+<li>（调出替换窗口）Ctrl + H</li>
+<li>（调出替换窗口）Ctrl + Shift + 1</li>
+<li>（调出替换窗口）Ctrl + Alt + 回车键</li>
+<li>（单文件搜索配置editor.find.autoFindInSelection）选中了多行文本，开始搜索时，自动在这几行代码里进行搜索</li>
+</ol>
+<h2 id="3-多文件搜索和替换"><a href="#3-多文件搜索和替换" class="headerlink" title="3.多文件搜索和替换"></a>3.多文件搜索和替换</h2><ol>
+<li>（快速地调出多文件搜索窗口）Ctrl + Shift + F</li>
+<li>（多文件搜索配置search.collapseResults）alwaysExpand直接展开结果</li>
+</ol>
+<h2 id="4-编辑器设置"><a href="#4-编辑器设置" class="headerlink" title="4.编辑器设置"></a>4.编辑器设置</h2><ol>
+<li>（控制整个行号显示）editor.lineNumbers</li>
+<li>（让编辑器将所有的空格符、制表符等全部都渲染出来）editor.renderWhitespace: all</li>
+<li>（缩进参考线）editor.renderIndentGuides</li>
+<li>（垂直标尺）”editor.rulers”: [120]</li>
+<li>（小地图 Minimap）editor.minimap.enabled</li>
+<li>（光标的样式）”editor.cursorBlinking” “editor.cursorStyle” 和 “editor.cursorWidth”</li>
+<li>（当前代码行的行号下的背景色）editor.renderLineHighlight: “all”</li>
+<li>（创建一个新文件的格式）files.defaultLanguage: “markdown”</li>
+<li>editor cursor， 是跟光标渲染和多光标相关的设置；</li>
+<li>editor find， 是与编辑器内搜索相关的设置；</li>
+<li>editor font， 是与字体有关的设置；</li>
+<li>editor format， 是代码格式化；</li>
+<li>editor suggest， 是和自动补全、建议窗口等相关的配置。</li>
+</ol>
+<h2 id="5-文件管理"><a href="#5-文件管理" class="headerlink" title="5.文件管理"></a>5.文件管理</h2><ol>
+<li>（调出最近打开的文件夹的列表）Ctrl + R，Ctrl + 回车</li>
+<li>（将文件夹添加到工作区）add folder to workspace</li>
+<li>（将工作区另存为）save workspace as</li>
+<li>（切换窗口）Switch Window</li>
+</ol>
+<h2 id="6-命令面板"><a href="#6-命令面板" class="headerlink" title="6.命令面板"></a>6.命令面板</h2><ol>
+<li>（打开命令面板快速访问符号）Ctrl + Shift + O</li>
+<li>（打开命令面板）Ctrl + Shift + P</li>
+<li>（文件资源管理器）Ctrl + Shift + E</li>
+<li>（跨文件搜索）Ctrl + Shift + F</li>
+<li>（源代码管理）Ctrl + Shift + G</li>
+<li>（启动和调试）Ctrl + Shift + D</li>
+<li>（管理扩展）Ctrl + Shift + X</li>
+<li>（查看错误和警告）Ctrl + Shift + M</li>
+<li>（打开侧边栏）Ctrl + B</li>
+</ol>
+<h2 id="7-插件"><a href="#7-插件" class="headerlink" title="7.插件"></a>7.插件</h2><ol>
+<li>（可以可视化看分支）GitLens</li>
+</ol>
 
     </div>
     
@@ -199,15 +262,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/08/14/工具/" class="pre-post btn btn-default" title='工具'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">工具</span>
-        </a>
     
-    
-        <a href="/2019/08/14/脚手架搭建/" class="next-post btn btn-default" title='脚手架搭建'>
+        <a href="/2019/09/16/webpack学习/" class="next-post btn btn-default" title='webpack学习'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">脚手架搭建</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">webpack学习</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -250,7 +308,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <p>暂无目录</p>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-代码折叠"><span class="toc-text">1.代码折叠</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-单文件搜索和替换"><span class="toc-text">2.单文件搜索和替换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-多文件搜索和替换"><span class="toc-text">3.多文件搜索和替换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-编辑器设置"><span class="toc-text">4.编辑器设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-文件管理"><span class="toc-text">5.文件管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-命令面板"><span class="toc-text">6.命令面板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-插件"><span class="toc-text">7.插件</span></a></li></ol>
         
     </div>
 </aside>
