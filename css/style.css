@@ -761,6 +761,8 @@ pre {
   margin: 0 0 0px 6px;
   padding-left: 16px;
   list-style-type: square;
+  color:#006eec;
+  font-size: 18px;
 }
 
 .post-content ol {
@@ -768,6 +770,8 @@ pre {
   margin: 0 0 0px 6px;
   padding-left: 16px;
   list-style-type: decimal;
+  color:#2196f3;
+  font-size: 20px;
 }
 
 .post-content li {
