@@ -761,7 +761,7 @@ pre {
   margin: 0 0 0px 6px;
   padding-left: 16px;
   list-style-type: square;
-  color:#006eec;
+  /* color:#006eec; */
   font-size: 18px;
 }
 
@@ -770,7 +770,7 @@ pre {
   margin: 0 0 0px 6px;
   padding-left: 16px;
   list-style-type: decimal;
-  color:#2196f3;
+  /* color:#2196f3; */
   font-size: 20px;
 }
 
@@ -1673,6 +1673,7 @@ pre .comment {
 
 .highlight .line {
   height: 20px;
+  font-size: 17px;
 }
 
 .gutter {
